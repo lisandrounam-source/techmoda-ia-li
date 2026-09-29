@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechModa - Catálogo de Productos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="bg-blue-600 p-2 rounded-lg">
+                        <i class="fas fa-store w-6 h-6 text-white" style="font-size: 1.5rem;"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold text-gray-900">TechModa</h1>
+                        <p class="text-sm text-gray-500">Catálogo de Productos</p>
+                    </div>
+                </div>
+                <button class="flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all bg-gray-100 text-gray-700 hover:bg-gray-200">
+                    <i class="fas fa-cog" style="font-size: 1rem;"></i>
+                    Modo Cliente
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Search & Filter -->
+        <div class="mb-8 space-y-4">
+            <div class="flex flex-col sm:flex-row gap-4">
+                <div class="flex-1 relative">
+                    <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                    <input
+                        type="text"
+                        placeholder="Buscar productos..."
+                        class="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    />
+                </div>
+                <select class="px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white">
+                    <option value="Todos">Todas las Categorías</option>
+                    <option value="Ropa">Ropa</option>
+                    <option value="Zapatos">Zapatos</option>
+                    <option value="Accesorios">Accesorios</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Product Card 1 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105">
+                <div class="aspect-square overflow-hidden bg-gray-100">
+                    <img
+                        src="https://techmoda-ai-li-frontend.s3.us-east-1.amazonaws.com/assets/tenis-blancos.jpg"
+                        alt="Tenis blancos minimalistas"
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+                <div class="p-5">
+                    <div class="flex items-start justify-between mb-2">
+                        <h3 class="text-lg font-semibold text-gray-900 line-clamp-1">
+                            Tenis blancos minimalistas
+                        </h3>
+                        <span class="text-xs px-2 py-1 bg-blue-50 text-blue-700 rounded-full font-medium">
+                            Zapatos
+                        </span>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4 line-clamp-2">
+                        Sneakers de cuero sintético blanco, suela de goma.
+                    </p>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-2xl font-bold text-gray-900">$74.50</span>
+                        <div class="flex items-center gap-1 text-sm text-gray-500">
+                            <i class="fas fa-box"></i>
+                            <span>25 disponibles</span>
+                        </div>
+                    </div>
+
+                    <!-- AI Features Section -->
+                    <div class="mt-4 space-y-3 border-t pt-4">
+                        <!-- Error Message -->
+                        <div class="text-xs text-red-600 bg-red-50 p-2 rounded">
+                            Error al cargar features
+                        </div>
+
+                        <!-- Language Selector + Translate Button -->
+                        <div class="flex gap-2">
+                            <div class="flex gap-1 bg-gray-100 rounded-lg p-1">
+                                <button class="px-3 py-1 rounded text-sm font-medium transition-all bg-white text-blue-600 shadow-sm">
+                                    ES
+                                </button>
+                                <button class="px-3 py-1 rounded text-sm font-medium transition-all text-gray-600 hover:text-gray-900">
+                                    EN
+                                </button>
+                            </div>
+                            <button class="flex items-center gap-1 px-3 py-1 text-sm bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition-colors disabled:opacity-50">
+                                <i class="fas fa-globe" style="font-size: 0.9rem;"></i>
+                                Traducir
+                            </button>
+                        </div>
+
+                        <!-- Translation Preview -->
+                        <div class="text-sm bg-blue-50 p-2 rounded">
+                            <p class="font-semibold text-blue-900">Tenis blancos minimalistas</p>
+                            <p class="text-blue-800 line-clamp-2">Sneakers de cuero sintético blanco, suela de goma.</p>
+                        </div>
+
+                        <!-- Audio Button -->
+                        <button class="w-full flex items-center justify-center gap-2 px-3 py-2 text-sm bg-green-100 text-green-700 rounded-lg hover:bg-green-200 transition-colors font-medium">
+                            <i class="fas fa-volume-up" style="font-size: 0.9rem;"></i>
+                            Escuchar descripción
+                        </button>
+
+                        <!-- Audio Player -->
+                        <audio controls class="w-full h-8" style="margin-top: 0.5rem;">
+                            <source src="" type="audio/mpeg">
+                            Tu navegador no soporta el elemento de audio.
+                        </audio>
+                    </div>
+
+                    <!-- Add to Cart Button -->
+                    <button class="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium transition-colors mt-4 bg-blue-600 text-white hover:bg-blue-700">
+                        <i class="fas fa-shopping-cart" style="font-size: 0.9rem;"></i>
+                        Agregar al Carrito
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105">
+                <div class="aspect-square overflow-hidden bg-gray-100">
+                    <img
+                        src="https://techmoda-ai-li-frontend.s3.us-east-1.amazonaws.com/assets/chaqueta-denim.jpg"
+                        alt="Chaqueta de mezclilla oversize"
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+                <div class="p-5">
+                    <div class="flex items-start justify-between mb-2">
+                        <h3 class="text-lg font-semibold text-gray-900 line-clamp-1">
+                            Chaqueta de mezclilla oversize
+                        </h3>
+                        <span class="text-xs px-2 py-1 bg-blue-50 text-blue-700 rounded-full font-medium">
+                            Ropa
+                        </span>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4 line-clamp-2">
+                        Chaqueta denim oversize, lavado claro, bolsillos frontales.
+                    </p>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-2xl font-bold text-gray-900">$89.00</span>
+                        <div class="flex items-center gap-1 text-sm text-gray-500">
+                            <i class="fas fa-box"></i>
+                            <span>8 disponibles</span>
+                        </div>
+                    </div>
+
+                    <!-- AI Features Section -->
+                    <div class="mt-4 space-y-3 border-t pt-4">
+                        <!-- Language Selector + Translate Button -->
+                        <div class="flex gap-2">
+                            <div class="flex gap-1 bg-gray-100 rounded-lg p-1">
+                                <button class="px-3 py-1 rounded text-sm font-medium transition-all bg-white text-blue-600 shadow-sm">
+                                    ES
+                                </button>
+                                <button class="px-3 py-1 rounded text-sm font-medium transition-all text-gray-600 hover:text-gray-900">
+                                    EN
+                                </button>
+                            </div>
+                            <button class="flex items-center gap-1 px-3 py-1 text-sm bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition-colors">
+                                <i class="fas fa-globe" style="font-size: 0.9rem;"></i>
+                                Traducir
+                            </button>
+                        </div>
+
+                        <!-- Translation Preview -->
+                        <div class="text-sm bg-blue-50 p-2 rounded">
+                            <p class="font-semibold text-blue-900">Chaqueta de mezclilla oversize</p>
+                            <p class="text-blue-800 line-clamp-2">Chaqueta denim oversize, lavado claro, bolsillos frontales.</p>
+                        </div>
+
+                        <!-- Audio Button -->
+                        <button class="w-full flex items-center justify-center gap-2 px-3 py-2 text-sm bg-green-100 text-green-700 rounded-lg hover:bg-green-200 transition-colors font-medium">
+                            <i class="fas fa-volume-up" style="font-size: 0.9rem;"></i>
+                            Escuchar descripción
+                        </button>
+
+                        <!-- Audio Player -->
+                        <audio controls class="w-full h-8" style="margin-top: 0.5rem;">
+                            <source src="" type="audio/mpeg">
+                            Tu navegador no soporta el elemento de audio.
+                        </audio>
+                    </div>
+
+                    <!-- Add to Cart Button -->
+                    <button class="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium transition-colors mt-4 bg-blue-600 text-white hover:bg-blue-700">
+                        <i class="fas fa-shopping-cart" style="font-size: 0.9rem;"></i>
+                        Agregar al Carrito
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105">
+                <div class="aspect-square overflow-hidden bg-gray-100">
+                    <img
+                        src="https://techmoda-ai-li-frontend.s3.us-east-1.amazonaws.com/assets/bolso-tote.jpg"
+                        alt="Bolso tote de lona"
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+                <div class="p-5">
+                    <div class="flex items-start justify-between mb-2">
+                        <h3 class="text-lg font-semibold text-gray-900 line-clamp-1">
+                            Bolso tote de lona
+                        </h3>
+                        <span class="text-xs px-2 py-1 bg-blue-50 text-blue-700 rounded-full font-medium">
+                            Accesorios
+                        </span>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4 line-clamp-2">
+                        Bolso tote de lona resistente, asas largas, color arena.
+                    </p>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-2xl font-bold text-gray-900">$39.99</span>
+                        <div class="flex items-center gap-1 text-sm text-gray-500">
+                            <i class="fas fa-box"></i>
+                            <span>15 disponibles</span>
+                        </div>
+                    </div>
+
+                    <!-- AI Features Section -->
+                    <div class="mt-4 space-y-3 border-t pt-4">
+                        <!-- Language Selector + Translate Button -->
+                        <div class="flex gap-2">
+                            <div class="flex gap-1 bg-gray-100 rounded-lg p-1">
+                                <button class="px-3 py-1 rounded text-sm font-medium transition-all bg-white text-blue-600 shadow-sm">
+                                    ES
+                                </button>
+                                <button class="px-3 py-1 rounded text-sm font-medium transition-all text-gray-600 hover:text-gray-900">
+                                    EN
+                                </button>
+                            </div>
+                            <button class="flex items-center gap-1 px-3 py-1 text-sm bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition-colors">
+                                <i class="fas fa-globe" style="font-size: 0.9rem;"></i>
+                                Traducir
+                            </button>
+                        </div>
+
+                        <!-- Translation Preview -->
+                        <div class="text-sm bg-blue-50 p-2 rounded">
+                            <p class="font-semibold text-blue-900">Bolso tote de lona</p>
+                            <p class="text-blue-800 line-clamp-2">Bolso tote de lona resistente, asas largas, color arena.</p>
+                        </div>
+
+                        <!-- Audio Button -->
+                        <button class="w-full flex items-center justify-center gap-2 px-3 py-2 text-sm bg-green-100 text-green-700 rounded-lg hover:bg-green-200 transition-colors font-medium">
+                            <i class="fas fa-volume-up" style="font-size: 0.9rem;"></i>
+                            Escuchar descripción
+                        </button>
+
+                        <!-- Audio Player -->
+                        <audio controls class="w-full h-8" style="margin-top: 0.5rem;">
+                            <source src="" type="audio/mpeg">
+                            Tu navegador no soporta el elemento de audio.
+                        </audio>
+                    </div>
+
+                    <!-- Add to Cart Button -->
+                    <button class="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium transition-colors mt-4 bg-blue-600 text-white hover:bg-blue-700">
+                        <i class="fas fa-shopping-cart" style="font-size: 0.9rem;"></i>
+                        Agregar al Carrito
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <p class="text-center text-gray-500 text-sm">
+                TechModa © 2024 - E-commerce de Moda Serverless
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
